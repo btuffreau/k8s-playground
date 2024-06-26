@@ -1,0 +1,48 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aetion
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: aetion
+  labels:
+    app: backend
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      nodeSelector:
+        kubernetes.io/os: linux
+      containers:
+        - image: "gcr.io/google-samples/hello-go-gke:1.0"
+          name: "backend"
+          ports:
+            - name: http
+              containerPort: 80
+          resources:
+            requests:
+              memory: "300Mi"
+              cpu: "3"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: aetion
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: "TCP"
+      port: 80
+      targetPort: 80

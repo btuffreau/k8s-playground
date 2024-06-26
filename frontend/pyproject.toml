@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "awesome_app"
+version = "0.0.7"
+description = "Business critical cloud native application"
+
+dependencies = [
+    "kubernetes==30.1.0",
+    "kubernetes-stubs==22.6.0.post1",
+    "flask==3.0.3",
+    "requests==2.32.3",
+    "types-requests==2.32.0.20240622",
+]
+
+requires-python = ">=3.11"
+keywords = ["dev", "notsafe"]
+
+[project.optional-dependencies]
+dev = [
+    "mypy ~= 1.10.1",
+    "flake8 ~= 7.1.0",
+]
+
+[tool.setuptools.package-data]
+"awesome_app" = ["py.typed"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.mypy]
+install_types = true
+non_interactive = true
+strict = true
+exclude = ["build", "awesome_app.egg-info"]
