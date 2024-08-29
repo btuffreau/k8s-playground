@@ -17,6 +17,3 @@ logging.info(app.config)
 app.register_blueprint(index_blueprint)
 app.register_blueprint(healthz_blueprint)
 app.register_blueprint(kubeinfo_blueprint)
-
-# TODO prepare role/role binding for service account with wrong permissions :)
-# TODO add helm to the ec2 instance, so the user can do something with it: install some release, create one from scratch
