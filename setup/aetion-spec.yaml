@@ -9,6 +9,6 @@ containerdConfigPatches:
           endpoint = ["http://kind-registry:5000"]
 nodes:
 - role: control-plane
-  image: kindest/node:v1.29.4@sha256:3abb816a5b1061fb15c6e9e60856ec40d56b7b52bcea5f5f1350bc6e2320b6f8
+  image: kindest/node:v1.32.2@sha256:142f543559cc55d64e1ab9341df08e5ced84bd2e893736da8f51320f26f5950b
   labels:
     environment: interview

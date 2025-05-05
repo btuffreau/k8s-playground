@@ -16,7 +16,7 @@ runcmd:
   - [ sh, -c, "usermod -a -G docker ec2-user" ]
   - [ wget, "https://github.com/mikefarah/yq/releases/download/v4.2.0/yq_linux_amd64", -O, /usr/local/bin/yq ]
   - [ chmod, +x, /usr/local/bin/yq ]
-  - [ wget, "https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.3/2024-04-19/bin/linux/amd64/kubectl", -O, /usr/local/bin/kubectl ]
+  - [ wget, "https://s3.us-west-2.amazonaws.com/amazon-eks/1.32.0/2024-12-20/bin/linux/amd64/kubectl", -O, /usr/local/bin/kubectl ]
   - [ chmod, +x, /usr/local/bin/kubectl ]
   - [ wget, "https://kind.sigs.k8s.io/dl/v0.23.0/kind-linux-amd64", -O, /usr/local/bin/kind ]
   - [ chmod, +x, /usr/local/bin/kind ]
